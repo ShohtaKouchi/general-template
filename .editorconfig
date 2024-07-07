@@ -1,0 +1,32 @@
+# .editorconfig File
+#
+# This .editorconfig file helps maintain consistent coding styles across various file types in our project. It specifies our
+# preferred indentation style, character set, end-of-line character, and other key formatting settings. By doing so, it enhances
+# code readability and reduces trivial merge conflicts caused by formatting discrepancies. These configurations are recognized by
+# many text editors and IDEs, providing a universal solution for coding style consistency.
+# For more details, visit https://editorconfig.org.
+
+root = true
+
+# All files
+[*]
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.{md,mdx}]
+# Markdown trailing whitespace is useful for visual separation of paragraphs.
+trim_trailing_whitespace = false
+max_line_length = off
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
