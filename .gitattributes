@@ -10,3 +10,6 @@
 # Ensure that Windows batch and CMD files always use CRLF for line endings.
 *.bat text eol=crlf
 *.cmd text eol=crlf
+
+# Include Markdown files in repository language statistics.
+*.md linguist-detectable=true
