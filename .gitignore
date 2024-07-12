@@ -31,3 +31,9 @@ Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
+
+## JetBrains IDEs
+.idea/**/shelf/
+.idea/**/.gitignore
+.idea/**/workspace.xml
+.idea/**/usage.statistics.xml
