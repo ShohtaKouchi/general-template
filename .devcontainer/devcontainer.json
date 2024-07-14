@@ -5,6 +5,7 @@
   "service": "main",
   "workspaceFolder": "/workspace",
   "features": {},
+  "postStartCommand": "./.devcontainer/post_start.sh ${containerWorkspaceFolder}",
   "customizations": {
     "vscode": {
       "extensions": [
