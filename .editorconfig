@@ -15,6 +15,13 @@ end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+# Bash files
+[*.sh]
+# Use TAB for indentation considering heredoc.
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
 # JSON files
 [*.json]
 indent_style = space
