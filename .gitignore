@@ -37,3 +37,7 @@ ehthumbs_vista.db
 .idea/**/.gitignore
 .idea/**/workspace.xml
 .idea/**/usage.statistics.xml
+
+## Node.js
+.pnpm-store/
+node_modules/
