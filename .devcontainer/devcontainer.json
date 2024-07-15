@@ -5,6 +5,7 @@
   "service": "main",
   "workspaceFolder": "/workspace",
   "features": {},
+  "postCreateCommand": "./.devcontainer/post_create.sh",
   "postStartCommand": "./.devcontainer/post_start.sh ${containerWorkspaceFolder}",
   "customizations": {
     "vscode": {
