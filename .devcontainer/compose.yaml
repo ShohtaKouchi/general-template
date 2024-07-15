@@ -9,3 +9,10 @@ services:
     stdin_open: true
     volumes:
       - ../:/workspace
+      # Isolating the node_modules and pnpm-store directories to avoid conflicts with the local environment.
+      - node_modules:/workspace/node_modules
+      - pnpm-store:/workspace/.pnpm-store
+
+volumes:
+  node_modules:
+  pnpm-store:
