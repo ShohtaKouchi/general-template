@@ -18,7 +18,9 @@ function restore_dependencies() {
 # @noargs
 # @description Docker volumes are created with root ownership. This function changes the ownership of the volumes to the current user.
 function change_volume_ownership() {
-	:
+
+	sudo chown -R "$(whoami)" ./node_modules
+	sudo chown -R "$(whoami)" ./.pnpm-store
 }
 
 # @brief Main function.
