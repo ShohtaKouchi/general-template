@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: Unlicense
+
+# This workflow ensures that every Pull Request is assigned to a milestone. It triggers on pull request creation, reopening, and
+# milestone addition/removal events. If a milestone is not assigned, it throws an error and requests the assignee to assign one.
+
+name: PR Milestone Checker
+
+on:
+  pull_request:
+    types: [opened, reopened, milestoned, demilestoned]
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -euo pipefail {0}
+
+jobs:
+  check-milestone:
+    name: Check Milestone
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check milestone
+        run: |
+          if [[ -z "${{ github.event.pull_request.milestone }}" ]]; then
+            echo "::error::Pull Request is not assigned to a milestone."
+            exit 1
+          fi
+
+      - name: Write summary
+        if: failure()
+        run: |
+          echo "Please assign a milestone to the Pull Request." >> "$GITHUB_STEP_SUMMARY"
