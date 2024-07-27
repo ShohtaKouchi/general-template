@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Unlicense
+
+commit-msg:
+  commands:
+    "lint commit message":
+      # TODO: Add command to lint commit message
+      run: echo "Linting commit message"
