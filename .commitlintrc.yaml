@@ -1,0 +1,36 @@
+# Commitlint Configuration File
+#
+# This file defines the rules for commit messages to ensure consistency and readability.
+# Example of a valid commit message:
+# ```txt
+# feat: Add array parsing capability
+#
+# This commit adds the ability for the parser to handle arrays, including
+# nested arrays and arrays of objects.
+# ```
+
+defaultIgnores: true
+rules:
+  header-max-length: [1, "always", 72]
+  header-trim: [2, "always"]
+  type-case: [2, "always", "lower-case"]
+  type-empty: [2, "never"]
+  type-enum:
+    - 2
+    - "always"
+    - - "feat"
+      - "fix"
+      - "docs"
+      - "style"
+      - "refactor"
+      - "perf"
+      - "test"
+      - "build"
+      - "ci"
+      - "chore"
+  subject-case: [2, "always", "sentence-case"]
+  subject-full-stop: [2, "never", "."]
+  subject-empty: [2, "never"]
+  subject-min-length: [2, "always", 8]
+  body-leading-blank: [2, "always"]
+  body-max-line-length: [1, "always", 72]
