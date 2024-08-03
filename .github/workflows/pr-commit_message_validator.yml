@@ -1,0 +1,78 @@
+# SPDX-License-Identifier: Unlicense
+
+# This workflow ensures that all commits in a pull request have a valid commit message.
+
+name: PR Commit Message Validator
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -euo pipefail {0}
+
+jobs:
+  validate-commit-messages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.4
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Retrieve base and head commit sha
+        id: retrieve_base_and_head_commit_sha
+        run: |
+          base_sha=${{ github.event.pull_request.base.sha }}
+          head_sha=${{ github.event.pull_request.head.sha }}
+          echo "base_sha=$base_sha" >> $GITHUB_OUTPUT
+          echo "head_sha=$head_sha" >> $GITHUB_OUTPUT
+
+      - name: Validate commit messages
+        id: validate_commit_messages
+        env:
+          BASE_SHA: "${{ steps.retrieve_base_and_head_commit_sha.outputs.base_sha }}"
+          HEAD_SHA: "${{ steps.retrieve_base_and_head_commit_sha.outputs.head_sha }}"
+        run: |
+          if [ "$BASE_SHA" == "$HEAD_SHA" ]; then
+
+            echo "::debug::No new commits found, skipping commit message check."
+            exit 0
+          fi
+
+          commit_sha_list=($(git rev-list $BASE_SHA..$HEAD_SHA))
+          valid_failed=false
+          for commit_sha in "${commit_sha_list[@]}"; do
+
+            commit_message=$(git log --format=%B -n 1 $commit_sha)
+
+            if ! echo "$commit_message" | pnpm commitlint; then
+
+              commit_message_header=$(echo "$commit_message" | head -n 1)
+              echo "::error::Commit message validation failed for commit \"$commit_sha\": \"$commit_message_header\"."
+              valid_failed=true
+            fi
+          done
+
+          if [ "$valid_failed" = false ]; then
+
+            echo "::debug::All commit messages are valid."
+            exit 0
+          fi
+
+          echo "Commit message validation failed. Please correct the commit message format." >> "$GITHUB_STEP_SUMMARY"
+          exit 1
