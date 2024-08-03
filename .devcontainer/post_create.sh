@@ -11,7 +11,8 @@
 # @brief Restore the dependencies.
 # @noargs
 function restore_dependencies() {
-	:
+
+	pnpm install
 }
 
 # @brief Change the ownership of the volumes.
