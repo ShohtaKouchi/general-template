@@ -15,3 +15,7 @@ RUN apt-get update && apt-get install -y  --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g pnpm@9.5
+
+# Install hadolint
+RUN --mount=type=bind,source=.devcontainer/install_hadolint.sh,target=/tmp/install_hadolint.sh \
+    /tmp/install_hadolint.sh 2.12.0
