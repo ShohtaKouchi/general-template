@@ -1,0 +1,21 @@
+# Configuration file for yamllint
+#
+# This file specifies the rules and settings for yamllint.
+
+extends: default
+
+yaml-files:
+  - "*.yaml"
+  - "*.yml"
+  - "CITATION.cff"
+
+ignore-from-file: [.gitignore, .yamlignore]
+
+rules:
+  document-start: disable
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+  line-length: disable
+  truthy:
+    ignore: .github/workflows/
