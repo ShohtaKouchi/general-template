@@ -1,0 +1,6 @@
+# yamllint ignore configuration file
+#
+# This file specifies which files yamllint should ignore during the linting process.
+
+.git/
+pnpm-lock.yaml
