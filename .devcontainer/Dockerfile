@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y  --no-install-recommends \
     python3-pip=23.0.* \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
+# Install yamllint.
+RUN pip install --no-cache-dir --break-system-packages yamllint==1.35.1
 RUN npm install -g pnpm@9.5
 
 # Install hadolint
