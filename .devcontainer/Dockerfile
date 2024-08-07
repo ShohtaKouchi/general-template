@@ -11,6 +11,7 @@ RUN nodejs_setup=$(mktemp) && curl -fsSL -o $nodejs_setup https://deb.nodesource
     && rm $nodejs_setup
 RUN apt-get update && apt-get install -y  --no-install-recommends \
     nodejs=22.4.* \
+    python3-pip=23.0.* \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
