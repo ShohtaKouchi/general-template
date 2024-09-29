@@ -1,0 +1,102 @@
+# Development Task Issue Template
+#
+# This is a template for creating issues related to development tasks. It's utilized by developers and individuals in similar roles
+# when initiating development task issues. The template includes fields to compile crucial information for a comprehensive
+# understanding of the task, such as the task's summary, detailed description, motivation, and acceptance criteria.
+
+name: Development Task
+description: Use this template to create issues for development tasks. Intended for developers and related roles.
+
+body:
+  - id: summary
+    type: textarea
+    attributes:
+      label: Summary
+      description: |
+        Provide a short summary of the task.
+      placeholder: |
+        Add 'Dark Mode' support for the user interface.
+    validations:
+      required: true
+
+  - id: detailed-description
+    type: textarea
+    attributes:
+      label: Detailed Description
+      description: |
+        Provide details about what needs to be done and why.
+      placeholder: |
+        Implement dark mode, allowing users to switch between light and dark themes. Ensure compatibility with all major components of the app.
+    validations:
+      required: true
+
+  - id: motivation
+    type: textarea
+    attributes:
+      label: Motivation
+      description: |
+        Explain the importance of this task and the problem it addresses.
+      placeholder: |
+        Dark mode reduces eye strain for users working in low-light environments.
+    validations:
+      required: true
+
+  - id: acceptance-criteria
+    type: textarea
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Define the specific conditions that must be met for the task to be considered complete.
+      placeholder: |
+        The task is complete when:
+        - Dark mode toggle is available in the settings.
+        - All screens and components adapt to the selected theme.
+        - Tests are updated to cover dark mode functionality.
+    validations:
+      required: true
+
+  - id: implementation-notes
+    type: textarea
+    attributes:
+      label: Implementation Notes
+      description: |
+        Describe any specific technical details, constraints, or guidelines for implementing this task.
+      placeholder: |
+        Ensure the dark mode toggle integrates with the existing theme system. Test for performance on mobile devices.
+    validations:
+      required: false
+
+  - id: related-issues-prs-discussions
+    type: textarea
+    attributes:
+      label: Related Issues, PRs, Discussions
+      description: |
+        Provide links to related issues, pull requests, or discussions, especially if this task is blocked by or dependent on another task.
+      placeholder: |
+        - #123 (blocking)
+        - #456
+        - #789
+    validations:
+      required: false
+
+  - id: additional-context
+    type: textarea
+    attributes:
+      label: Additional Context
+      description: |
+        Provide any extra information relevant to the task.
+      placeholder: |
+        Consider performance optimizations on older devices. Ensure compatibility with third-party libraries.
+    validations:
+      required: false
+
+  - id: references
+    type: textarea
+    attributes:
+      label: References
+      description: |
+        Include links to resources, documentation, or other references.
+      placeholder: |
+        - [example.com](https://example.com)
+    validations:
+      required: false
