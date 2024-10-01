@@ -1,0 +1,12 @@
+# .gitattributes file
+#
+# The .gitattributes file is a configuration file that allows customization of how Git handles files and directories within this
+# repository. It provides the ability to specify the line ending style for text files, identify which files are binary, and even
+# automatically collapse lengthy diffs, among other functionalities.
+
+# Auto-detect text files and perform LF normalization on line endings.
+* text=auto eol=lf
+
+# Ensure that Windows batch and CMD files always use CRLF for line endings.
+*.bat text eol=crlf
+*.cmd text eol=crlf
