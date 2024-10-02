@@ -1,0 +1,44 @@
+# .gitignore file
+#
+# This file specifies files and directories that Git should ignore.
+
+# === Linux ===
+
+# Swap files
+*.swp
+
+# Temporary files
+*~
+
+# === macOS ===
+
+# macOS Finder directory metadata
+.DS_Store
+
+# Stores macOS custom file attributes for networked environments
+.AppleDouble
+
+# Overrides user-set file settings (e.g., icons, backgrounds)
+.LSOverride
+
+# Prevents macOS Spotlight from indexing the directory
+.Spotlight-V100
+
+# === Windows ===
+
+# Windows image file caches
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# === Editors ===
+
+# JetBrains IDEs
+.idea/
+
+# === Node.js ===
+
+# Package files
+.pnpm-store/
+node_modules/
