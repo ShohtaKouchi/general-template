@@ -1,0 +1,89 @@
+# .editorconfig File
+#
+# This .editorconfig file helps maintain consistent coding styles across various file types in our project. It specifies our
+# preferred indentation style, character set, end-of-line character, and other key formatting settings. By doing so, it enhances
+# code readability and reduces trivial merge conflicts caused by formatting discrepancies. These configurations are recognized by
+# many text editors and IDEs, providing a universal solution for coding style consistency.
+# For more details, visit https://editorconfig.org.
+
+root = true
+
+# All files
+[*]
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# AWK files
+[*.awk]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Bash files
+[*.sh]
+# Use TAB for indentation considering heredoc.
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Batch files
+[*.{bat,cmd}]
+end_of_line = crlf
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Dockerfiles
+[{Dockerfile,Dockerfile.*}]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# GraphQL files
+[*.{gql,graphql}]
+indent_style = space
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Makefiles
+[Makefile]
+# Make sure each line in the recipe is indented with a single TAB character.
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Markdown files
+[*.{md,mdx}]
+# Markdown trailing whitespace is useful for visual separation of paragraphs.
+trim_trailing_whitespace = false
+max_line_length = off
+
+# XML files
+[*.xml]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# JetBrains IDEs
+#
+# Disable EditorConfig settings for IDE-generated files to avoid differences.
+[.idea/**]
+charset = unset
+end_of_line = unset
+indent_style = unset
+indent_size = unset
+tab_width = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+max_line_length = unset
