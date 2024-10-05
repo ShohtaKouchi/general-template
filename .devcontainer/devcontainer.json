@@ -1,0 +1,14 @@
+{
+  "name": "General Template Dev Container",
+  "dockerComposeFile": "./compose.yaml",
+  "service": "main",
+  "workspaceFolder": "/workspace",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
