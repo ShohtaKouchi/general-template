@@ -8,5 +8,6 @@ FROM mcr.microsoft.com/devcontainers/base:bookworm
 
 RUN apt-get update && apt-get install -y  --no-install-recommends \
     shellcheck=0.9.0-1 \
+    shfmt=3.6.0-* \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
