@@ -7,6 +7,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "foxundermoon.shell-format",
+        "timonwong.shellcheck"
       ]
     }
   },
