@@ -6,6 +6,12 @@
   "features": {},
   "customizations": {
     "vscode": {
+      "settings": [
+        {
+          "shellformat.path": "/usr/bin/shfmt",
+          "shellformat.useEditorConfig": true
+        }
+      ],
       "extensions": [
         "EditorConfig.EditorConfig",
         "foxundermoon.shell-format",
